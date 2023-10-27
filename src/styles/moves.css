@@ -1,0 +1,107 @@
+.moveContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.moves {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #cb1e41bd; */
+  flex-grow: 1; /* Añadimos flex-grow para que ocupe todo el espacio vertical disponible */
+  overflow-y: auto; /* Hacemos que sea desplazable si los movimientos exceden el alto */
+  width: 100%;
+}
+
+.moveImagen {
+  /* background-color: blue; */
+  /* margin-bottom: -25px; */
+   padding-top: 115px; 
+}
+
+#pokeImg {
+  /* background-color: lightblue; */
+  border-radius: 1rem;
+  padding: 0 1.5rem;
+  width: 100px;
+}
+
+#pokeImg:hover {
+  box-shadow: 1px 3px 3px 4px darkgray;
+  transition: box-shadow 0.5s;
+}
+
+.dato {
+  border-bottom: 3px solid #b74555;
+  font-weight: 500;
+  width: 100%;
+}
+
+.move {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  /* border: 3px solid white; */
+  padding: 20px;
+}
+
+.moveOption {
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid #b74555;
+  /* background-color:lightsalmon; */
+  /* color: white; */
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.wing {
+  animation: butterflyMovement 3s infinite alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes butterflyMovement {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25%, 75% {
+    transform: translateY(-10px) translateX(20px);
+  }
+  50% {
+    transform: translateY(0) translateX(40px);
+  }
+}
+
+
+@media only screen and (min-width: 360px) {
+  .move {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .move {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .move {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .move {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .move {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}

@@ -1,0 +1,155 @@
+ @property --rotate{
+  syntax: '<angle>';
+  initial-value: 132deg;
+  inherits: false;
+}
+ 
+:root {
+  --card-height: 6vw;
+  --rotate: 132deg;
+    
+}
+
+.pokeContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 115px;
+
+}
+
+.pokeList {
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(4, minmax(100px, 0.5fr));
+  grid-gap: 2rem;
+  padding: 20px;
+}
+
+.pokeOption {
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.card {
+  align-items: center;
+  /* background-color: #9edef9; */
+  /* background-color: #f8bbd0; */
+  /* background-color: #FCEEC8; */
+  background-color: #f4f5f6;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 5px #00000080; 
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  padding: 0 1rem;
+  text-decoration: none;
+  transition: 0.5s ease all;
+  width: 250px;
+ 
+}
+
+.card:hover {
+  box-shadow: none;
+  color: #EF3C82;
+  transform: scaleX(1.15); 
+  transition: 0.3s ease ;
+}
+
+.card img {
+  width: 80px;
+}
+
+.card:hover::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+  
+}
+
+.card:hover::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 2));
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+ 
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;  
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+.btn-group {
+  display: flex;
+  
+}
+
+.btn-group #boton {
+  /* background-color: #b74555; */
+  /* background-color: #9edef9; */
+  /* background-color: #9B59B6; */
+  /* background-color: rgb(255, 112, 40);  */
+  /* border:  2px solid purple; */
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 1rem;
+  padding: 0.3rem 0;
+  outline: none;
+  box-shadow: 0px 5px 5px rgba(255, 255, 255, 0.7); 
+  width: 150px;
+}
+
+.btn-group #boton:hover {
+  box-shadow: 0px -5px 5px rgba(255, 255, 255, 0.7);
+}
+
+@media only screen and (max-width: 767px) {
+  .pokeList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .pokeList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .pokeList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

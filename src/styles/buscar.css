@@ -1,0 +1,33 @@
+.containerInput {
+	padding: 140px 50px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+label {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-right: 5px;
+}
+
+#filtrarNombre {
+	height: 30px;
+	width: 40%;
+}
+
+input:focus {
+	border-color: #EF3C82;
+    box-shadow:  0 3px 3px rgba(239, 60, 130, 0.7)inset,  0 0px 8px rgba(234, 230, 202, 0.7);  /*0 0 8px rgba(239,60,130,0.6); */
+	/* border-color: rgb(40, 40, 197);
+    box-shadow:  0 1px 3px rgba(40, 40, 197, 0.7)inset, 0 0 8px rgba(40, 40, 197,0.6);*/
+    outline: 0 none;
+}
+
+input::placeholder {
+	padding-left:10px;
+}
+
+.material-symbols-outlined {
+	margin-left: -30px;
+}

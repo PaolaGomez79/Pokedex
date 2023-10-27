@@ -1,0 +1,39 @@
+.spinner{
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  border-radius: 50%;
+  z-index: 2
+}
+.spinner {
+  background-color: transparent;
+  border-top: 10px solid rgb(188, 202, 66);
+  border-right: 10px solid rgb(66,139,202);
+  border-bottom: 10px solid rgb(202, 66, 129);
+  border-left: 10px solid rgba(66,139,202,.2);
+  animation: rotar 0.5s ease-in-out infinite;
+}
+
+@keyframes rotar{
+  0%{
+      transform: rotate(0deg);  
+  }
+
+  25%{
+      transform: rotate(90deg);
+  }
+
+  50%{
+      transform: rotate(180deg);
+  }
+
+  75%{
+      transform: rotate(270deg);
+  }
+
+  100%{
+      transform: rotate(360deg);
+  }
+}
